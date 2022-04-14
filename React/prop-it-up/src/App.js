@@ -1,10 +1,12 @@
 import React from "react";
 import "./App.css";
 import PersonCard from "./components/PersonCard";
-
+// app.js
 function App() {
   return (
     <div className="App">
+      {/* repeatedly displaying on the functional component PersonCard 
+      while I provide the necessary data by way of the props */}
       <PersonCard
         lastName={"Robertson"}
         firstName={"Jimmy"}
@@ -29,6 +31,11 @@ function App() {
         age={"55"}
         hair={"pink"}
       />
+      {/* from synthetic events section 
+      this is just a test to implement the button*/}
+      <button onClick={() => alert("Nice!!! The button has been clicked!")}>
+        Click here Please!
+      </button>
     </div>
   );
 }
