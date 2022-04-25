@@ -1,55 +1,37 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Product from "./components/Product";
 import Form from "./components/Form";
+import Nav from "./components/Nav";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { useState } from 'react';
 
 function App() {
-  const products = [
-    {
-      id: 1,
-      name: "Iphone 13",
-      price: 999,
-      category: "Smartphone",
-      image: "http://via.placeholder.com/200x200",
-    },
-    {
-      id: 2,
-      name: "Ipad Pro",
-      price: 799,
-      category: "Tablet",
-      image: "http://via.placeholder.com/200x200",
-    },
-    {
-      id: 3,
-      name: "macbook pro",
-      price: 2999,
-      category: "Laptop",
-      image: "http://via.placeholder.com/200x200",
-    },
-    {
-      id: 4,
-      name: "apple watch",
-      price: 299,
-      category: "Watch",
-      image: "http://via.placeholder.com/200x200",
-    },
-  ];
+  const [products, setProducts] = useState([]);
   return (
+    <>
+    <Nav />
     <Container>
       <Row>
         <Col className="mb-4">
-          <Form />
+          <Form products = {products} setProducts = {setProducts} />
         </Col>
       </Row>
       <Row>
         {products.map((product) => {
-          return <Product key={product.id} product={product} />;
+          return (
+          <Product 
+            key={product.id}
+            product={product}
+            products={products}
+            setProducts={setProducts}
+            />
+        );
         })}
       </Row>
     </Container>
+    </>
   );
 }
 
