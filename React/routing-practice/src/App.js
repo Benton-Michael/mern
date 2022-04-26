@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./components/Home";
+import ParamsComponent from "./components/ParamsComponent";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          {/* The home route is hardcoded */}
+          <Route element={<Home />} path="/home" />
+
+          {/* These are the diff. routes that use parameters passed in via the route/path */}
+          <Route element={<ParamsComponent />} path="/:word" />
+
+          <Route element={<ParamsComponent />} path="/:word/:color/:bgColor" />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
