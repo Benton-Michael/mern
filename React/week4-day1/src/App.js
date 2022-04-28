@@ -5,6 +5,7 @@ import About from "./components/About";
 import Nav from "./components/Nav";
 import NotFound from "./components/NotFound";
 import Math from "./components/Math";
+import Digimon from "./components/Digimon";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/math/:a/:b" element={<Math />} />
+          <Route path="/digimons/:name" element={<Digimon />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </div>

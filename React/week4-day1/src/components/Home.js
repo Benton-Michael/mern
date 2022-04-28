@@ -13,12 +13,19 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       {digimons.map((digimon) => (
-        <div>
+        <div className="card">
           <img src={digimon.img} alt={digimon.name} />
           <h2>{digimon.name}</h2>
           <p>{digimon.level}</p>
+          {/* using interpolation on line below */}
+          {/* below is nots in run-time so no props. but we can pass it state */}
+          {/* passing as a state to the digimon component */}
+          <Link to={`${"digimons"}/${digimon.name}`} state={digimon}>
+            {""}
+            Get Details
+          </Link>
         </div>
       ))}
     </div>
