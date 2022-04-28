@@ -1,0 +1,19 @@
+nav {
+  background-color: #d47fff;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 1rem;
+}
+
+nav ul li a {
+    color: aquamarine;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.active {
+    color: #ffb116;
+    font-weight: bold;
+}
