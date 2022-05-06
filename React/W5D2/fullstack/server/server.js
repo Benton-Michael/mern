@@ -5,7 +5,7 @@ const app = express();
 const PORT = 5001;
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); // DONT FORGET THE middleware <!DOCTYPE html>
+app.use(express.urlencoded({ extended: true })); // DONT FORGET THE middleware 
 
 // app.use(cors()); // this would accept all origins
 
