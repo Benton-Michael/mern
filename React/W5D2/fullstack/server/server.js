@@ -11,11 +11,13 @@ app.use(express.urlencoded({ extended: true })); // DONT FORGET THE middleware
 
 // Only the localhost port will be able to access the server
 app.use(
-  cors({
-    origin: "http://localhost:5001",
+cors({
+    origin: "http://localhost:3000", 
   })
 );
 
+// Always place routes after the middleware 
+// app.use(express.json()) must be above the (app) call 
 require('./routes/movie.routes')(app);
 
 app.listen(PORT, () => {
