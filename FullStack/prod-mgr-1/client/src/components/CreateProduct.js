@@ -29,7 +29,7 @@ const CreateProduct = (props) => {
         console.log(res.data);
 
         setTitle("");
-        SetPrice("");
+        setPrice("");
         setDescription("");
       })
 
@@ -46,6 +46,7 @@ const CreateProduct = (props) => {
         <div className="form-fields">
           <label>Title</label>
           <input
+          // setting the value to title here in order to clear out the inputs upon submission
             onChange={(e) => setTitle(e.target.value)}
             value={title}
             name="title"
@@ -54,7 +55,29 @@ const CreateProduct = (props) => {
         </div>
 
         <br />
-        <input className="submit-input" type="submit" value="Create" />
+
+        <div className="form-fields">
+          <label>Price</label>
+          <input onChange={(e)=>setPrice(e.target.value)}
+          name="price"
+          type="number"
+          />
+        </div>
+
+        <br />
+
+        <div className ="form-fields">
+          <label>Description</label>
+          <input
+            onChange={(e)=>setDescription(e.target.value)}
+            name="description"
+            type="text"
+            />
+        </div>
+
+        <br />
+
+        <button className="btn-primary" type="submit" value="Create">Submit</button>
       </form>
     </div>
   );
