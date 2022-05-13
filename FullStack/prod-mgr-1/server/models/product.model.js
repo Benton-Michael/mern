@@ -13,8 +13,7 @@ const ProductSchema = new mongoose.Schema(
     description: {
       type: String,
     },
-  },
-  { timestamps: true }
+  }, { timestamps: true }
 );
 
 const Product = mongoose.model("Product", ProductSchema);

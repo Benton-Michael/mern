@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const CreateProduct = (props) => {
+  const { productList, setProductList } = props;
+
   // A state is created for each of the 3 different input fields
   const [title, setTitle] = useState("");
 
@@ -28,6 +30,7 @@ const CreateProduct = (props) => {
         console.log(res);
         console.log(res.data);
 
+        setProductList([...productList, res.data]);
         setTitle("");
         setPrice("");
         setDescription("");
@@ -46,7 +49,7 @@ const CreateProduct = (props) => {
         <div className="form-fields">
           <label>Title</label>
           <input
-          // setting the value to title here in order to clear out the inputs upon submission
+            // setting the value to title here in order to clear out the inputs upon submission
             onChange={(e) => setTitle(e.target.value)}
             value={title}
             name="title"
@@ -58,26 +61,29 @@ const CreateProduct = (props) => {
 
         <div className="form-fields">
           <label>Price</label>
-          <input onChange={(e)=>setPrice(e.target.value)}
-          name="price"
-          type="number"
+          <input
+            onChange={(e) => setPrice(e.target.value)}
+            name="price"
+            type="number"
           />
         </div>
 
         <br />
 
-        <div className ="form-fields">
+        <div className="form-fields">
           <label>Description</label>
           <input
-            onChange={(e)=>setDescription(e.target.value)}
+            onChange={(e) => setDescription(e.target.value)}
             name="description"
             type="text"
-            />
+          />
         </div>
 
         <br />
 
-        <button className="btn-primary" type="submit" value="Create">Submit</button>
+        <button className="btn-primary" type="submit" value="Create">
+          Submit
+        </button>
       </form>
     </div>
   );
