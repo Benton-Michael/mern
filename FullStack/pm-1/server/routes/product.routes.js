@@ -9,4 +9,8 @@ module.exports = (app) => {
   app.post("/api/products", ProductController.createProduct);
   app.get("/api/products", ProductController.getAllProducts);
   app.get("/api/products/:id", ProductController.getOneProduct);
+  //update is a Put request so the route can stay the same
+  app.put("/api/products/:id", ProductController.updateProduct);
+  // delete can also use this route but key changes
+  app.delete("/api/products/:id", ProductController.deleteProduct);
 };

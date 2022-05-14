@@ -19,6 +19,19 @@ const DisplayAll = (props) => {
       .catch((err) => console.log(err));
   }, []); // useEffect takes in an empty array here
 
+  const deleteFilter = (idFromBelow) => {
+    axios
+      .delete(`http://localhost:5001/api/products/${idFromBelow}`)
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+        setProductList(
+          productList.filter((product, index) => product._id !== idFromBelow)
+        );
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div>
       <header>All Products:</header>
@@ -28,6 +41,9 @@ const DisplayAll = (props) => {
         // get the individual products using the _id
         <div key={product._id}>
           <Link to={`/product/${product._id}`}> {product.title} </Link>
+          <Link to={`/product/edit/${product._id}`}>Edit</Link>
+          {/* delete takes in the Product's id */}
+          <button onClick={() => deleteFilter(product._id)}>Delete</button>
         </div>
       ))}
     </div>
