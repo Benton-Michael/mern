@@ -4,6 +4,8 @@ import axios from "axios";
 // define our functional component and pass in props
 
 const CreateProduct = (props) => {
+  const { productList, setProductList } = props;
+
   // state for each of the three fields
   const [title, setTitle] = useState("");
   // doesnt't need to be 0 can be string
@@ -23,6 +25,9 @@ const CreateProduct = (props) => {
       .then((res) => {
         console.log(res);
         console.log(res.data);
+        //spread out the getter
+        // res.data will be our newly created Mongo document (our product)
+        setProductList([...productList, res.data]);
         //setting each of these pieces of state to empty strings again
         setTitle("");
         setPrice("");
