@@ -1,9 +1,9 @@
 header {
-  background-color: #333;
+  background-color: rgb(115, 112, 112);
   color: #eee;
   padding: 20px;
 }
-
+/* the white used above and below is not solid white. It is better for screen readers */
 .nav-link {
   color: #eee;
   text-decoration: none;

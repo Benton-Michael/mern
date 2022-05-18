@@ -40,8 +40,9 @@ function Movie() {
       <p>Rating: {movie.rating} </p>
       <p>Actors:</p>
       <p> {movie.actors && movie.actors.join(",")} </p>
+      {/* ternary statement below- it is boolean */}
       {movie.isKidFriendly ? <p>Good for Kids</p> : <p>Not for Kids!</p>}
-      <p>Relese Year: {movie.releseYear} </p>
+      <p>Release Year: {movie.releaseYear} </p>
 
       <button onClick={handleDelete}>Delete</button>
     </div>

@@ -28,7 +28,9 @@ function MovieList() {
         console.log(res);
         setMovies(movies.filter((movie) => movie._id !== movieID));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log("Error in Delete", err);
+      });
   };
 
   return (

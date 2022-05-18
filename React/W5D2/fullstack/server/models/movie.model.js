@@ -58,7 +58,7 @@ const MovieSchema = new mongoose.Schema(
       type: Number,
       min: [
         1989,
-        "No way dude. Movies didn't even exist until 1990. Try again. Bye",
+        "Movies didn't even exist until 1990. Try again. Bye",
       ],
     },
   },

@@ -18,7 +18,7 @@ form {
 .movie {
   width: 250px;
   border: 1px solid black;
-  box-shadow: 0px 0px 10px black;
+  box-shadow: 0px 0px 10px #2d001e;
   padding: 20px;
 }
 .movie img {
