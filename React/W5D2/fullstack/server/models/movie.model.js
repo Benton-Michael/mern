@@ -56,10 +56,7 @@ const MovieSchema = new mongoose.Schema(
     },
     releaseYear: {
       type: Number,
-      min: [
-        1989,
-        "Movies didn't even exist until 1990. Try again. Bye",
-      ],
+      min: [1989, "Movies didn't even exist until 1990. Try again. Bye"],
     },
   },
   {
