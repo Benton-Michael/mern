@@ -36,7 +36,7 @@ function Pet() {
     <div>
       <h2>{pet.name}</h2>
       <p>Pet Type:{pet.type}</p>
-      <p>Pet Description:{pet.description}</p>
+      <p>Pet Description:{pet.description}</p> 
       <p>Pet Skills {pet.skillOne} </p>
       <p>{pet.skillTwo}</p>
       <p>{pet.skillThree}</p>

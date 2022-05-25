@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-
 // get all pets function
 function PetList() {
   // a state to hold the pets data
@@ -35,21 +34,23 @@ function PetList() {
   return (
     <div className="pet">
       The Pet List here
-      {pet.map((pet, index) => {
-        <div className="pet" >
+      {pets.map((pets, index) => (
+        <div className="pet" key={pets._id}>
           <div key={index}>
-            <h2> {pet.name} </h2>
+            <h2> {pets.name} </h2>
             <br />
-            <Link to={`/pet/${pet._id}`}> Pet Details </Link>
+            <Link to={`/pets/${pets._id}`}> Pet Details </Link>
             <span> | </span>
-            <Link to={`/pet/edit/${pet._id}`}> Update Pet info </Link>
+            <Link to={`/pets/edit/${pets._id}`}> Update Pet info </Link>
             <br />
-            <button onClick={() => handleDelete(pet._id)}>Adopt</button>
+            <button onClick={() => handleDelete(pets._id)}>Adopt</button>
           </div>
-        </div>;
-      })}
+        </div>
+      ))}
     </div>
   );
 }
 
 export default PetList;
+
+
