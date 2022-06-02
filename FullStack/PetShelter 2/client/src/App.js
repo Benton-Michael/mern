@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-    // Note
+    // comments
       <Header />
       <Routes>
         <Route path="/" element={<PetList />} />
