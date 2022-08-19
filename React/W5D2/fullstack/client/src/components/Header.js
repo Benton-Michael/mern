@@ -6,7 +6,7 @@ function Header() {
   return (
     // html5 header is like a div here
     <header>
-      <h1>Movies App</h1>
+      <h1>Michael's Movies App</h1>
       <NavLink className="nav-link" to="/">
         Home
       </NavLink>
